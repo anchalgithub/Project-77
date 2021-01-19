@@ -4,7 +4,14 @@ import db from '../config'
 import firebase from 'firebase'
 
 export default class WelcomeScreen extends Component{
-
+constructor(){
+super();
+this.state = {
+emailId:'',
+password:''
+}
+}
+            
 userLogin=(emailId, password)=>{
 firebase.auth().signInWithEmailAndPassword(emailId, password).then(()=>{
 return Alert.alert ("User Successfully Logged In")
